@@ -108,6 +108,7 @@ div.settings-container button:hover {
   height: 60vh;
   display: flex;
   flex-wrap: nowrap;
+  overflow-x: auto;
   color: #000;
 }
 #visualize section.animation-zone div.array-container {
