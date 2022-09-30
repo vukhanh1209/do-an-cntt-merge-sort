@@ -103,8 +103,6 @@ div.settings-container button:hover {
 }
 
 #scrollbar::-webkit-scrollbar {
-  position: relative;
-  top: 0;
   width: 12px;
   height: 8px;
 }
