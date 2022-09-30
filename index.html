@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="vendor/normalize.css" />
+		<link rel="stylesheet" href="vendor/fontawesome/fontawesome.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Livvic&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="sass/main.css" />
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+		<title>Merge Sort Visualization</title>
+	</head>
+
+	<body>
+		<div id="container">
+			<header>
+				<div class="header-container">
+	
+					<div>
+						<h1>Merge Sort Visualization</h1>
+					</div>
+				</div>
+				<div class="gradient-border"></div>
+			</header>
+
+			
+	
+			<main>
+				<div class="settings-container">
+					<div>
+						<p>Array to sort:</p>
+						<input
+							id="arr"
+							type="text"
+							placeholder="[0, 1, 2, 3, 4, ...] - Minimum length: 2"
+						/>
+					</div>
+	
+					<div>
+						<p>Animation timeout:</p>
+						<input
+							id="timeout"
+							type="number"
+							placeholder="Miliseconds"
+						/>
+					</div>
+	
+					<!-- <div class="errors success"> -->
+					<div class="settings__notification">
+					
+						<p id="error"></p>
+						<p id="success"></p>
+
+					</div>
+	
+					<button id="save-settings">Save</button>
+				</div>
+
+				<div id="visualize">
+					<section class="animation-zone"></section>
+	
+					<section class="errors"><p class="error-msg"></p></section>
+		
+					<section class="buttons">
+						<div class="wrapper">
+							<div><button id="sort">Sort</button></div>
+							<div><button id="unsort">Unsort</button></div>
+						</div>
+					</section>
+				</div>
+				
+			</main>
+		</div>
+		
+		
+
+		<script src="vendor/fontawesome/fontawesome.js"></script>
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="js/arrays.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/settings.js"></script>
+		<script src="js/animation.js"></script>
+	</body>
+</html>

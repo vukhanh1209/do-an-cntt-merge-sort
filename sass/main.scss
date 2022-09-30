@@ -1,0 +1,243 @@
+/* ----------------------------------------------------------------- */
+/* Global */
+/* ----------------------------------------------------------------- */
+
+$bg-color: #242426;
+$default-font: "Lato", sans-serif;
+$text-color: #fff;
+$main-gradient: linear-gradient(to right, #00c7fd, #00d6fd, #00e4f6, #00f1e9, #00fcd5);
+
+@mixin center() {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin scaleOnHover($scale) {
+  & {
+    transition: all .2s ease-in-out;
+  }
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+body {
+  background: $bg-color;
+}
+
+main {
+  position: relative;
+  padding: 40px 0;
+  font-family: $default-font;
+  color: $text-color;
+  @include center();
+}
+
+#container {
+  padding: 0 40px;
+  background-color: #fff;
+}
+
+/* ----------------------------------------------------------------- */
+/* Header */
+/* ----------------------------------------------------------------- */
+
+header {
+  font-family: $default-font;
+  color: #0D1431;
+
+  h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+  }
+  
+  div.header-container {
+    display: flex;
+    justify-content: center;
+  }
+  div.gradient-border {
+    width: 100%;
+    height: 1px;
+    margin: 0 auto;
+    background: $main-gradient;
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* Setting */
+/* ----------------------------------------------------------------- */
+
+
+div.settings-container {
+  border-radius: 5px;
+  margin: 40px 0;
+  padding: 40px;
+  background-color: #0D1431;
+  p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  input {
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    @include center();
+    width: 50%;
+    padding: 5px 10px;
+    &#timeout {
+      width: 50%;
+    }
+  }
+  .settings__notification {
+    @include center();
+    height: 40px;
+    margin: 0;
+
+  }
+ 
+  button {
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0;
+    height: 40px;
+    width: 20%;
+    margin: 0 auto 20px auto;
+    background-color: #00C8FD;
+    border-radius: 5px;
+    color: #fff;
+    @include scaleOnHover(1.1);
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* Animation Zone */
+/* ----------------------------------------------------------------- */
+
+#visualize {
+  border-radius: 5px;
+  margin: 40px 0;
+  padding: 40px;
+  background-color: #0D1431;
+
+  section.animation-zone {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-wrap: nowrap;
+    // overflow-x: auto;
+    color: #000;
+  
+    div.array-container {
+      display: inline-flex;
+      flex: 0 0 auto;
+      position: absolute;
+  
+      div.array-element {
+        height: 40px;
+        width: 40px;
+        margin: 0 1px 0 1px;
+        background: #00c7fd;
+        text-align: center;
+        font-family: $default-font;
+        font-weight: bold;
+  
+        p {
+          font-size: 14px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+
+  section.errors {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #EB75A6;
+
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* Notification */
+/* ----------------------------------------------------------------- */
+
+#error {
+  font-family: $default-font;
+  font-weight: bold;
+  color: #EB75A6;
+  transition: all ease-in-out .3s;
+}
+
+#success {
+  font-family: $default-font;
+  font-weight: bold;
+  color: #00FBD6;
+  transition: all ease-in-out .3s;
+}
+
+/* ----------------------------------------------------------------- */
+/* Buttons */
+/* ----------------------------------------------------------------- */
+
+section.buttons {
+  bottom: 7%;
+  @include center();
+  font-family: $default-font;
+
+  div.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(50px, auto);
+    text-align: center;
+  }
+
+  button {
+    box-sizing: border-box;
+    // border: none;
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    
+    cursor: pointer;
+    @include scaleOnHover(1.05);
+    &#sort {
+      color: #000;
+      background: $main-gradient;
+    }
+    &#unsort {
+      color: #fff;
+      border: 1px solid #00FCD5;
+      background-color: #0D1431;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  div#settings {
+    width: 300px;
+  }
+  section.animation-zone {
+    div.array-container {
+      div.array-element {
+        width: 30px;
+        height: 30px;
+        p {
+          font-size: 12px;
+          line-height: 8px;
+        }
+      }
+    }
+  }
+
+}
