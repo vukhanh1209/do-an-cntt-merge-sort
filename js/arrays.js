@@ -1,17 +1,8 @@
-/**
- * Deletes all div.array-container from DOM
- * @public
- */
 function removeAll() {
 	$('div.array-container').remove();
 }
 
-/**
- * Creates and appends a jquery container with the given array
- * @public
- * @param {array} arr - array to be displayed
- * @returns {Jquery Object} 
- */
+
 function displayArray(arr) {
     removeAll();
 	let $arrayContainer = $("<div></div>").addClass("array-container");
@@ -36,11 +27,7 @@ function displayArray(arr) {
     return $arrayContainer;
 }
 
-/**
- * Parses and converts a string to an array
- * @public
- * @param {string} str - string to be converted into an array
- */
+
 function parse(str) {
     let replaced = str.replace(/\s/g, '');
     return JSON.parse(replaced);

@@ -2,8 +2,6 @@ let sorted = false;
 
 $(document).ready(() => {
 
-	// Sort button
-
 	$("#sort").click(() => {
         if (sorted) {
             $('section.errors p').text('Already sorted!');
@@ -15,7 +13,6 @@ $(document).ready(() => {
         sorted = true;
     });
     
-    // Unsort button
 
     $("#unsort").click(() => {
         if (!sorted) {
